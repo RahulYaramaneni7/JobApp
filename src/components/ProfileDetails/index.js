@@ -37,7 +37,7 @@ class ProfileDetails extends Component {
     if (response.ok === true) {
       const data = await response.json()
       const profileData = {
-        name: data.profile_details.name,
+        name: 'Rahul Yaramaneni',
         profileImageUrl: data.profile_details.profile_image_url,
         shortBio: data.profile_details.short_bio,
       }
@@ -62,7 +62,7 @@ class ProfileDetails extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="profile-loader-container" testid="loader">
+    <div className="profile-loader-container">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
@@ -71,7 +71,6 @@ class ProfileDetails extends Component {
     <div className="failure-view-container">
       <button
         type="button"
-        testid="button"
         className="job-item-failure-button"
         onClick={this.getProfileDetails}
       >
